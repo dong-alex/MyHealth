@@ -3,9 +3,9 @@ import Sequelize from 'sequelize';
 const sequelize = new Sequelize(
   'healthdb',
   'postgres',
-   null,
+  null,
   {
-    dialect: 'postgres',
+    dialect: 'postgres'
   },
 );
 
@@ -15,7 +15,7 @@ const models = {
   Medication: sequelize.import('./medication')
 };
 
-Object.keys(models).forEach(key => {
+Object.keys(models).forEach((key) => {
   if ('associate' in models[key]) {
     models[key].associate(models);
   }

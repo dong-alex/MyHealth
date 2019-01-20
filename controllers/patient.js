@@ -4,16 +4,26 @@ const Patient = sequelize.import('../models/patient');
 
 class Patients {
   static signUp(req, res) {
-    // console.log(req.query.name);
-    // const { name } = req.query.name;
-    // console.log(name);
     return Patient.create({
       name: req.query.name,
+      patientID: req.query.id
     })
       .then(userData => res.status(201).send({
         success: true,
         message: 'Patient successfully created',
-        userData,
+        userData
+      }));
+  }
+
+  static logIn(req, res) {
+    return Patient.findOne({
+      where: {
+        patientID: req.query.id
+      }
+    })
+      .then(userData => res.status(201).send({
+        success: userData ? 'User Found' : 'User not found',
+        userData
       }));
   }
 }
