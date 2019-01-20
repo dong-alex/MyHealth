@@ -19,8 +19,10 @@ const {
   dialogflow,
   Permission,
   Suggestions,
+  DialogflowApp,
 } = require('actions-on-google');
 
+const axios = require('axios');
 
 
 // Import the firebase-functions package for deployment.
@@ -29,6 +31,8 @@ const functions = require('firebase-functions');
 // Instantiate the Dialogflow client.
 const app = dialogflow({debug: true});
 
+
+var ID = 0;
 // Handle the Dialogflow intent named 'See My Health'.
 // The intent collects a parameter named 'color'.
 app.intent('Open MyHealth', (conv, {number}) => {
@@ -46,8 +50,39 @@ app.intent('Open MyHealth', (conv, {number}) => {
     	);
     conv.ask(new Suggestions('Check Medication', 'Doctor note'));
   }
+  ID = number;
+});
+
+app.intent('Open MyHealth - Medication', (conv, {checking_req , medication}) => {
+  
+  const actionMap = new Map()
+  actionMap.set(getMedication )
+  
+  conv.ask("This " + ID);
 
 });
+
+function getMedication(app) {
+  let instance = axios.create({
+        baseURL: 'http://127.0.0.1:8081/api/',
+        })
+          instance.get('patients?id=3')
+  .then(function (response) {
+    // handle success
+    conv.ask("Logging into database");
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+    conv.ask("got into here atleast")
+  });
+    
+    conv.ask('left Function')
+  }
+
 
 
 // Handle the Dialogflow intent named 'Default Welcome Intent'.

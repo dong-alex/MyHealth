@@ -2,19 +2,21 @@ const doctor = (sequelize, DataTypes) => {
   const Doctor = sequelize.define('doctor', {
     doctorID: {
       type: DataTypes.INTEGER,
-      unique: true
+      unique: true,
+      primaryKey: true,
+      autoIncrement: true
     },
     name: DataTypes.STRING
   });
 
-  Doctor.associate = (models) => {
-    // Doctor.hasMany(models.Patient, {
-    //     foreignKey: "patientID",
-    // });
-    Doctor.hasMany(models.Medication, {
-      foreignKey: 'medicationID'
-    });
-  };
+  // Doctor.associate = (models) => {
+  //   Doctor.hasMany(models.Patient, {
+  //     foreignKey: 'doctorID'
+  //   });
+  //   Doctor.hasMany(models.Medication, {
+  //     foreignKey: 'doctorID'
+  //   });
+  // };
 
   return Doctor;
 };
