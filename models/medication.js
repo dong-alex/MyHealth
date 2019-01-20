@@ -1,13 +1,13 @@
 const medication = (sequelize, DataTypes) => {
-    const Medication = sequelize.define('medication', {
-        medicationID: {
-            type: DataTypes.INTEGER,
-            unique: true
-        },
-        date: DataTypes.DATEONLY,
-        name: DataTypes.STRING,
-        description: DataTypes.STRING
-    });
+  const Medication = sequelize.define('medication', {
+    medicationID: {
+      type: DataTypes.INTEGER,
+      unique: true,
+    },
+    date: DataTypes.DATEONLY,
+    name: DataTypes.STRING,
+    description: DataTypes.STRING,
+  });
     // Medication.associate = models => {
     //     Medication.hasOne(models.Doctor, {
     //         foreignKey: "doctorID",
@@ -16,8 +16,8 @@ const medication = (sequelize, DataTypes) => {
     //         foreignKey: "patientID",
     //     });
     // };
-  
-    return Medication;
-  };
-  
-  export default medication;
+
+  return Medication;
+};
+
+export default medication;
