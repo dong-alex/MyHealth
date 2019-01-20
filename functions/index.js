@@ -31,6 +31,12 @@ const functions = require('firebase-functions');
 // Instantiate the Dialogflow client.
 const app = dialogflow({debug: true});
 
+exports.googleHomeSMS = functions.https.onRequest((request, response) => {
+    const app2 = new DialogflowApp({ request, response })
+    console.log(`Request Headers: ${JSON.stringify(request.headers)}`)
+    console.log(`Request Body: ${JSON.stringify(request.body)}`)
+    app2.handleRequest(actionMap)
+})
 
 var ID = 0;
 // Handle the Dialogflow intent named 'See My Health'.
