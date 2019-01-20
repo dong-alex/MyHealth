@@ -1,0 +1,29 @@
+Here is some sample patient data:
+
+Patient ID: 1 (decide on a suitable patient number scheme)
+Password: password (this should be hashed; SHA-256)
+First Name: John
+Last Name: Doe
+Doctor ID: see patient ID
+Patient Notes: {
+    None
+}
+
+Patient ID:
+Password:
+First Name: Jane
+Last Name: Doe
+Doctor ID:
+Patient Notes: {
+    Check up visit scheduled for 6 months from last visit.
+}
+
+(Medication)
+Patient ID:
+Drug Name: Codeine
+Dosage Frequency: {
+    "One pill every 4-6 hours; no more than 4 pills per day"
+}
+Last Taken: YYYY-MM-DD HH:MM:SS
+Next Dose: YYYY-MM-DD HH:MM:SS
+Prescribed By:
