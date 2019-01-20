@@ -9,7 +9,7 @@ app.post('/api/patients', Patients.signUp);
 app.get('/api/patients', Patients.logIn);
 
 sequelize.sync().then(() => {
-  app.listen(port, () => {
+  app.listen(port, '0.0.0.0', () => {
     console.log(`Example app listening on port ${port}!`);
   });
 });

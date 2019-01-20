@@ -16,6 +16,7 @@ class Patients {
   }
 
   static logIn(req, res) {
+	console.log(req.query);
     return Patient.findOne({
       where: {
         patientID: req.query.id
