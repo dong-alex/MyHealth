@@ -7,6 +7,8 @@ const medication = (sequelize, DataTypes) => {
     date: DataTypes.DATEONLY,
     name: DataTypes.STRING,
     description: DataTypes.STRING,
+    dosage: DataTypes.STRING,
+    lastTaken: DataTypes.TIME,
   });
     // Medication.associate = models => {
     //     Medication.hasOne(models.Doctor, {
