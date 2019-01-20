@@ -2,7 +2,7 @@ import Sequelize from 'sequelize';
 
 const sequelize = new Sequelize(
   'healthdb',
-  'chaitali',
+  'postgres',
    null,
   {
     dialect: 'postgres',
