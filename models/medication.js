@@ -2,11 +2,11 @@ const medication = (sequelize, DataTypes) => {
   const Medication = sequelize.define('medication', {
     medicationID: {
       type: DataTypes.INTEGER,
-      unique: true,
+      unique: true
     },
     date: DataTypes.DATEONLY,
     name: DataTypes.STRING,
-    description: DataTypes.STRING,
+    description: DataTypes.STRING
   });
     // Medication.associate = models => {
     //     Medication.hasOne(models.Doctor, {
