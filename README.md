@@ -16,14 +16,14 @@ Home/Alexa interfaces with the Doctor object and a Medical API to fulfill the fo
 - "What is my medical condition?"; this feature is especially useful for having precise records of concerns discussed during appointments/notes made by the doctor 
 4. USER *tells* HOME/ALEXA about MEDICATION TAKEN (Doctor object)
 - "I took X"; Home/Alexa should note the time and cross-reference current medications for i) the medication the user says they just took; ii) outstanding medications that still need to be taken; iii) medication frequency (is the user taking the medication on time)?
-5. DOCTOR *updates* CURRENT MEDICATION and *notifies* user of change(Doctor object) 
+5. DOCTOR *updates* CURRENT MEDICATION and *notifies* user of change (Doctor object) 
 - Doctor adjusts medication frequency; during next conversation, Home/Alexa must notify the user of changes and receive and acknowledgement 
 
 **Each patient must be assigned a unique identifier (password protected) encapsulating the patient's medical information (security is a key concern with the system implementation)**
 
 ## Doctor Object
 
-Contains all of the data specific to the patient
+Contains all of the data specific to the patient. If a patient request to Home/Alexa cannot find the request data in the Doctor Object, the request will be thrown to a Medical API.
 
 ### Patient 
 - Patient ID (Unique identifier)
@@ -31,6 +31,7 @@ Contains all of the data specific to the patient
 - First Name
 - Last Name
 - Doctor ID(s)
+- Patient Notes
 
 ### Doctor
 - Doctor ID (Unique identifier)
