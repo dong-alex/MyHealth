@@ -3,17 +3,16 @@ const patient = (sequelize, DataTypes) => {
     patientID: {
       type: DataTypes.INTEGER,
       unique: true,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     name: DataTypes.STRING
   });
 
   Patient.associate = (models) => {
-    // Patient.hasOne(models.Doctor, {
-    //   foreignKey: "doctorID",
-    // });
-    Patient.hasMany(models.Medication, {
-      foreignKey: 'prescriptionID'
+    Patient.belongsToMany(models.Medication, {
+      through: 'PatientMedication',
+      foreignKey: 'patientID'
     });
   };
 

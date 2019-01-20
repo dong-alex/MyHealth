@@ -3,7 +3,8 @@ const doctor = (sequelize, DataTypes) => {
     doctorID: {
       type: DataTypes.INTEGER,
       unique: true,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     name: DataTypes.STRING
   });

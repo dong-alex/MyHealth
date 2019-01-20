@@ -3,7 +3,8 @@ const medication = (sequelize, DataTypes) => {
     medicationID: {
       type: DataTypes.INTEGER,
       unique: true,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     date: DataTypes.DATEONLY,
     name: DataTypes.STRING,
@@ -11,11 +12,12 @@ const medication = (sequelize, DataTypes) => {
     dosage: DataTypes.STRING,
     lastTaken: DataTypes.TIME
   });
-  // Medication.associate = (models) => {
-  //   // Medication.belongsToMany(models.Patient, {
-  //   //   through: 'PatientMedication'
-  //   // });
-  // };
+  Medication.associate = (models) => {
+    Medication.belongsToMany(models.Patient, {
+      through: 'PatientMedication',
+      foreignKey: 'medicationID'
+    });
+  };
 
   return Medication;
 };
