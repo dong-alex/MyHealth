@@ -11,13 +11,6 @@ class Patients {
       .then(userData => res.status(201).send({
         success: true,
         message: 'Patient successfully created',
-<<<<<<< HEAD
-        userData,
-      }))
-      .catch(err => res.status(404).send({
-        success: false,
-        message: err,
-=======
         userData
       }));
   }
@@ -31,7 +24,6 @@ class Patients {
       .then(userData => res.status(201).send({
         success: userData ? 'User Found' : 'User not found',
         userData
->>>>>>> 2618bd280ce0ce38a92f973ac062c2381b1e2771
       }));
   }
 }

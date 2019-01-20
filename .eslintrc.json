@@ -2,9 +2,5 @@
     "extends": "airbnb-base",
     "rules": {
         "comma-dangle": ["error", "never"]
-<<<<<<< HEAD
     }
-=======
-     }
->>>>>>> 2618bd280ce0ce38a92f973ac062c2381b1e2771
 }
