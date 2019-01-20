@@ -19,7 +19,7 @@ Home/Alexa interfaces with the Doctor object and a Medical API to fulfill the fo
 5. DOCTOR *updates* CURRENT MEDICATION and *notifies* user of change(Doctor object) 
 - Doctor adjusts medication frequency; during next conversation, Home/Alexa must notify the user of changes and receive and acknowledgement 
 
-**Each patient must be assigned a unique identifier (password protected) encapsulating the patient's medical information (security is a key concern with the system implementation**
+**Each patient must be assigned a unique identifier (password protected) encapsulating the patient's medical information (security is a key concern with the system implementation)**
 
 ## Doctor Object
 
