@@ -15,6 +15,7 @@ app.get('/api/medications', Medications.getAllMedications);
 
 // patients
 app.post('/api/patients', Patients.signUp);
+app.get('/api/patients', Patients.logIn);
 
 // medications
 app.post('/api/postDummyData', Medications.postDummyData);
