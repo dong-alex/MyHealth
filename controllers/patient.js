@@ -4,9 +4,6 @@ const Patient = sequelize.import('../models/patient');
 
 class Patients {
   static signUp(req, res) {
-    // console.log(req.query.name);
-    // const { name } = req.query.name;
-    // console.log(name);
     return Patient.create({
       name: req.query.name,
     })
@@ -14,6 +11,10 @@ class Patients {
         success: true,
         message: 'Patient successfully created',
         userData,
+      }))
+      .catch(err => res.status(404).send({
+        success: false,
+        message: err,
       }));
   }
 }

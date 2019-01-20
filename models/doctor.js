@@ -1,22 +1,23 @@
 const doctor = (sequelize, DataTypes) => {
-    const Doctor = sequelize.define('doctor', {
-      doctorID: {
-        type: DataTypes.INTEGER,
-        unique: true,
-      },
-      name: DataTypes.STRING,
-    });
+  const Doctor = sequelize.define('doctor', {
+    doctorID: {
+      type: DataTypes.INTEGER,
+      unique: true,
+      primaryKey: true
+    },
+    name: DataTypes.STRING
+  });
 
-    Doctor.associate = models => {
-        // Doctor.hasMany(models.Patient, {
-        //     foreignKey: "patientID",
-        // });
-        Doctor.hasMany(models.Medication, {
-            foreignKey: "medicationID",
-        });
-    };
-  
-    return Doctor;
+  // Doctor.associate = (models) => {
+  //   Doctor.hasMany(models.Patient, {
+  //     foreignKey: 'doctorID'
+  //   });
+  //   Doctor.hasMany(models.Medication, {
+  //     foreignKey: 'doctorID'
+  //   });
+  // };
+
+  return Doctor;
 };
-  
+
 export default doctor;
